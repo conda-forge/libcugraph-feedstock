@@ -1,5 +1,5 @@
 {% set name = "libcugraph" %}
-{% set version = "0.19.0a" %}
+{% set version = "0.20.0a" %}
 
 package:
   name: {{ name|lower }}
@@ -7,20 +7,20 @@ package:
 
 source:
   - url: https://github.com/rapidsai/cugraph/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: eea8eb788ee2e9f369b6d4911c8cb7c4819453e17aa855eac14af86ee27f627e
+    sha256: 53c05f9e6faf11ce193a1942a5d6687997d6a0318054645777da95075c438fec
     folder: cugraph
   # libcugraph depends on the RMM header-only library of the same version.
   - url: https://github.com/rapidsai/rmm/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: aa2b6542e51e9d3bec1c4053ab2a06af8fb8e9a94be3832418109904ebebb276
+    sha256: 119a8d6a23386224c272c0dc26cfb035e6c3c8ca5c7fbc91844218f1a97a7bd6
     folder: rmm
 
 build:
-  number: 1
+  number: 0
   skip: true  # [(not linux) or (cuda_compiler_version == "None")]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
   missing_dso_whitelist:
-    - "*/libcuda.*"
+    - '*/libcuda.*'
 
 requirements:
   build:
@@ -55,7 +55,7 @@ about:
     - cugraph/cpp/build/_deps/thrust-src/LICENSE
     - cugraph/cpp/build/_deps/cuco-src/LICENSE
     - cugraph/cpp/build/cuhornet/src/cuhornet/LICENSE
-  summary: 'GPU accelerated graph algorithms'
+  summary: GPU accelerated graph algorithms
 
 extra:
   recipe-maintainers:
