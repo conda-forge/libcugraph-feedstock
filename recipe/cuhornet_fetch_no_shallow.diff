@@ -1,0 +1,13 @@
+diff --git a/cpp/CMakeLists.txt b/cpp/CMakeLists.txt
+index 0388a76d..288d7d32 100644
+--- a/cpp/CMakeLists.txt
++++ b/cpp/CMakeLists.txt
+@@ -277,7 +277,7 @@ FetchContent_Declare(
+     cuhornet
+     GIT_REPOSITORY    https://github.com/rapidsai/cuhornet.git
+     GIT_TAG           e58d0ecdbc270fc28867d66c965787a62a7a882c
+-    GIT_SHALLOW       true
++
+     SOURCE_SUBDIR     hornet
+ )
+ 
