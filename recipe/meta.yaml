@@ -54,7 +54,7 @@ about:
     - cugraph/cpp/build/_deps/raft-src/LICENSE
     - cugraph/cpp/build/_deps/thrust-src/LICENSE
     - cugraph/cpp/build/_deps/cuco-src/LICENSE
-    - cugraph/cpp/build/cuhornet/src/cuhornet/LICENSE
+    - cugraph/cpp/build/_deps/cuhornet-src/LICENSE
   summary: 'GPU accelerated graph algorithms'
 
 extra:
