@@ -7,10 +7,9 @@ package:
 
 source:
   - url: https://github.com/rapidsai/cugraph/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 047a0dc11a9783a759a7edcad8fe8d1729ca607e2ecdc3668a7f4533e0527a01
+    sha256: 719a70e76ee9e68a7a26598ced4dc87cb1b1053286851fce8cf8b14bfd7d480b
     folder: cugraph
-    patches:
-      - cuhornet_fetch_no_shallow.diff
+
   # libcugraph depends on the RMM header-only library of the same version.
   - url: https://github.com/rapidsai/rmm/archive/refs/tags/v{{ version }}.tar.gz
     sha256: eddd5b35b016d665eb4e8ea2dd31497d913b3e1eb831124e4cb27cba747267a0
