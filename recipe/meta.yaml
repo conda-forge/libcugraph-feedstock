@@ -31,7 +31,7 @@ requirements:
     - nccl
     - libfaiss =*=*_cuda
     - spdlog =1.7.0
-    - rmm ={{ version }}
+    - librmm ={{ version }}
 
 test:
   commands:
