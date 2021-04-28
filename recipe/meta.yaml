@@ -30,7 +30,6 @@ requirements:
     - boost-cpp
     - nccl
     - libfaiss =*=*_cuda
-    - spdlog =1.7.0
     - librmm ={{ version }}
 
 test:
