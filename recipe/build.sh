@@ -3,16 +3,11 @@
 # Derived from cugraph build script, as seen here:
 # https://github.com/rapidsai/cugraph/blob/db20b485cfc5399214afcff604b38493f38e83bf/build.sh#L137
 
-# NOTE: it is assumed the RMM header-only sources have been downloaded from the
-# multi-source "source:" section in the meta.yaml file.
-# cmake must be able to find the RMM headers using find_path(). The RMM_ROOT env
-# var is set so RMM_ROOT/include results in a valid dir for cmake to search.
-
 # Set env var DUMP_LOGS_ON_ERROR=0 to suppress
 DUMP_LOGS_ON_ERROR=${DUMP_LOGS_ON_ERROR:=1}
 
 export CUGRAPH_SRC_DIR="${SRC_DIR}/cugraph"
-export RMM_ROOT="${SRC_DIR}/rmm"
+export RMM_ROOT="${PREFIX}/include/rmm"
 export LIBCUGRAPH_BUILD_DIR=${LIBCUGRAPH_BUILD_DIR:=${CUGRAPH_SRC_DIR}/cpp/build}
 export GPU_ARCHS=ALL
 export INSTALL_PREFIX=${PREFIX:=${CONDA_PREFIX}}

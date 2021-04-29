@@ -10,13 +10,8 @@ source:
     sha256: 719a70e76ee9e68a7a26598ced4dc87cb1b1053286851fce8cf8b14bfd7d480b
     folder: cugraph
 
-  # libcugraph depends on the RMM header-only library of the same version.
-  - url: https://github.com/rapidsai/rmm/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: eddd5b35b016d665eb4e8ea2dd31497d913b3e1eb831124e4cb27cba747267a0
-    folder: rmm
-
 build:
-  number: 0
+  number: 1
   skip: true  # [(not linux) or (cuda_compiler_version == "None")]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -35,7 +30,7 @@ requirements:
     - boost-cpp
     - nccl
     - libfaiss =*=*_cuda
-    - spdlog =1.7.0
+    - librmm ={{ version }}
 
 test:
   commands:
@@ -50,10 +45,8 @@ about:
   license: Apache-2.0 AND BSD-3-Clause
   license_file:
     - cugraph/LICENSE
-    - rmm/LICENSE
     - cugraph/cpp/build/gunrock/src/gunrock_ext/LICENSE.TXT
     - cugraph/cpp/build/_deps/raft-src/LICENSE
-    - cugraph/cpp/build/_deps/thrust-src/LICENSE
     - cugraph/cpp/build/_deps/cuco-src/LICENSE
     - cugraph/cpp/build/_deps/cuhornet-src/LICENSE
   summary: 'GPU accelerated graph algorithms'
