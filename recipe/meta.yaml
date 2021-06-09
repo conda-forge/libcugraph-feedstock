@@ -1,5 +1,5 @@
 {% set name = "libcugraph" %}
-{% set version = "0.19.0" %}
+{% set version = "21.06.00" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,16 @@ package:
 
 source:
   - url: https://github.com/rapidsai/cugraph/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 719a70e76ee9e68a7a26598ced4dc87cb1b1053286851fce8cf8b14bfd7d480b
+    sha256: d061bc2862c1ba2d10f8a2ca4db7b4593b9a03b15b0eccc0e45ff01e52f1da00
     folder: cugraph
 
 build:
-  number: 1
+  number: 0
   skip: true  # [(not linux) or (cuda_compiler_version == "None")]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
   missing_dso_whitelist:
-    - "*/libcuda.*"
+    - '*/libcuda.*'
 
 requirements:
   build:
@@ -49,7 +49,7 @@ about:
     - cugraph/cpp/build/_deps/raft-src/LICENSE
     - cugraph/cpp/build/_deps/cuco-src/LICENSE
     - cugraph/cpp/build/_deps/cuhornet-src/LICENSE
-  summary: 'GPU accelerated graph algorithms'
+  summary: GPU accelerated graph algorithms
 
 extra:
   recipe-maintainers:
