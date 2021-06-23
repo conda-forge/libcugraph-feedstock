@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/rapidsai/cugraph/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: d061bc2862c1ba2d10f8a2ca4db7b4593b9a03b15b0eccc0e45ff01e52f1da00
+    sha256: d6d88ebb68b4ceeb59e6eaf03f916b0ca138f0cf417428f01f2ab29c8761a68d
     folder: cugraph
 
 build:
