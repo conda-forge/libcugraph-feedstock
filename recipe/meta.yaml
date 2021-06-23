@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [(not linux) or (cuda_compiler_version == "None")]
+  skip: true  # [(not linux) or (cuda_compiler_version in ("None", "9.2", "10.0", "10.1"))]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
   missing_dso_whitelist:
