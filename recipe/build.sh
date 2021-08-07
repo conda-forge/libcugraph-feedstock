@@ -19,6 +19,7 @@ export BUILD_STATIC_FAISS=OFF
 export PARALLEL_LEVEL=${CPU_COUNT}
 export INSTALL_TARGET=install
 export VERBOSE_FLAG="-v"
+export CPM_LOCAL_PACKAGES_ONLY=1
 
 # Use the nvcc wrapper installed with cudatoolkit, assumed to be first in PATH.
 # This ensures nvcc calls the compiler in the conda env.
